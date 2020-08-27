@@ -1,0 +1,15 @@
+@EndUserText.label : 'Sales Order Header Table'
+@AbapCatalog.enhancementCategory : #EXTENSIBLE_CHARACTER_NUMERIC
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #ALLOWED
+define table zaoc_so_header {
+  key client : abap.clnt not null;
+  key so_id  : abap.char(10) not null;
+  sales_org  : abap.char(4);
+  div        : abap.char(2);
+  dist_ch    : abap.char(2);
+  created_by : syuname;
+  created_dt : abap.dats;
+
+}

@@ -1,0 +1,25 @@
+managed; // implementation in class zbp_cds_so_header unique;
+
+define behavior for zcds_so_header //alias <alias_name>
+persistent table ZAOC_SO_HEADER
+lock master
+//authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  association _SOItem { create; }
+}
+
+define behavior for ZCDS_SO_ITEM //alias <alias_name>
+persistent table ZAOC_SO_ITEM
+lock dependent by _SOhdr
+//authorization dependent by <association>
+//etag master <field_name>
+{
+
+  field (readonly:update) so_id;
+  update;
+  delete;
+}
