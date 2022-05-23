@@ -11,7 +11,7 @@ etag master LastChangedAt
   field ( readonly, numbering : managed ) Id;
   field ( readonly ) ProjectId, Status;
   field ( readonly ) CreatedBy, CreatedAt, LastChangedBy, LastChangedAt;
-  field ( mandatory ) BeginDate, EndDate;
+  field ( mandatory:create, readonly:update ) BeginDate, EndDate;
 
 
   create;
@@ -35,5 +35,8 @@ etag master LastChangedAt
     LastChangedAt = last_changed_at;
     Status = status;
     IsSensitive = is_sensitive;
+    createdAt = created_at;
+    LastChangedBy = last_changed_by;
+    CreatedBy = created_by;
   }
 }
