@@ -5,7 +5,7 @@
  headerInfo: { typeName: 'Project', typeNamePlural: 'Projects', title: { type: #STANDARD, value: 'projectd' } } }
 @Search.searchable: true
 
-define root view entity ZC_PROJ
+define root view entity Z_C_PROJ
   provider contract transactional_query
   as projection on ZI_PROJ
 {
